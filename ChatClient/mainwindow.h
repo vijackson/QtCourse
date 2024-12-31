@@ -27,11 +27,27 @@ private slots:
 
     void connectedToServer();
 
-    void messageReceived(const QString &text);
+    void messageReceived(const QString &sender, const QString &text);
+
+    void jsonReceived(const QJsonObject &docObj);
+
+    void userJoined(const QString &user);
+    void userLeft(const QString &user);
+    void userListReceived(const QStringList &list);
+    void on_kickButton_clicked();
+    void onReturnToLoginPage();  // 处理返回登录页面的槽
+
+    void on_pushButton_clicked();
+    void privateMessageReceived(const QString &sender, const QString &text);
+
+    void on_privateMessageButton_clicked();
+
+    void on_findChatHistoryButton_clicked();
 
 private:
     Ui::MainWindow *ui;
 
     ChatClient *m_chatClient;
+    QString currentUser;  // 存储当前用户名
 };
 #endif // MAINWINDOW_H

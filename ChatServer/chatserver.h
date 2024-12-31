@@ -4,12 +4,15 @@
 #include <QObject>
 #include <QTcpServer>
 #include "serverworker.h"
+#include <QThreadPool>
+
 
 class ChatServer : public QTcpServer
 {
     Q_OBJECT
 public:
     explicit ChatServer(QObject *parent=nullptr);
+
 
 protected:
     void incomingConnection(qintptr socketDescriptor) override;
@@ -23,7 +26,9 @@ signals:
 public slots:
     void stopServer();
     void jsonReceived(ServerWorker *sender,const QJsonObject &docObj);
-
+    void userDisconnected(ServerWorker *sender);
+    void kickUser(const QString &username);  // 新增踢人功能
+    void sendPrivateMessage(const QString &receiver, const QString &sender, const QString &text);
 
 };
 

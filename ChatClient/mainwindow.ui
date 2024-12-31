@@ -121,14 +121,32 @@ border-radius: 25px;
               </widget>
              </item>
              <item row="1" column="0">
-              <widget class="QLabel" name="usernameEdit">
+              <widget class="QLabel" name="label">
                <property name="text">
                 <string>昵称</string>
                </property>
               </widget>
              </item>
              <item row="1" column="1">
-              <widget class="QLineEdit" name="lineEdit_2"/>
+              <widget class="QLineEdit" name="usernameEdit">
+               <property name="text">
+                <string>user</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="label_3">
+               <property name="text">
+                <string>密码</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QLineEdit" name="passwordEdit">
+               <property name="text">
+                <string>123456</string>
+               </property>
+              </widget>
              </item>
             </layout>
            </item>
@@ -198,6 +216,9 @@ border-radius: 25px;
               <height>16777215</height>
              </size>
             </property>
+            <property name="readOnly">
+             <bool>false</bool>
+            </property>
            </widget>
           </item>
           <item>
@@ -228,6 +249,27 @@ border-radius: 25px;
            <widget class="QPushButton" name="logoutButton">
             <property name="text">
              <string>退出</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="kickButton">
+            <property name="text">
+             <string>踢出用户</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="privateMessageButton">
+            <property name="text">
+             <string>私聊</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="findChatHistoryButton">
+            <property name="text">
+             <string>查看聊天记录</string>
             </property>
            </widget>
           </item>
